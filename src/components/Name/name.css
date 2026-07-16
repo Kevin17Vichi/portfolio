@@ -1,3 +1,5 @@
+/* name.css — Estilos del componente de presentación (hero) */
+
 .content {
   position: absolute;
   top: 0;
@@ -13,18 +15,20 @@
 }
 
 .profession {
-  font-family: "Poppins", serif;
+  /* font-family heredada de body vía index.css */
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   color: #ffffff;
   text-align: center;
   margin-top: 0;
   opacity: 0;
-  animation: fadeIn 1s ease-in forwards;
+  animation: fadeIn 1s ease-in forwards; /* @keyframes definido en index.css */
   animation-delay: 3s;
+  line-height: 1.5;
 }
 
 .name {
-  font-family: "Poppins-extrabold", serif;
+  /* font-weight: 800 reemplaza la familia inexistente "Poppins-extrabold" */
+  font-weight: 800;
   font-size: clamp(5rem, 8vw, 5rem);
   color: #ffffff;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
@@ -54,21 +58,13 @@
     border-color: transparent;
   }
   50% {
-    border-color: rgb(174, 0, 255);
+    border-color: var(--accent-color);
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* ============================================================
+   MEDIA QUERIES
+   ============================================================ */
 @media screen and (max-width: 1200px) {
   .name {
     font-size: clamp(2.5rem, 6vw, 4rem);
@@ -81,6 +77,10 @@
     font-size: clamp(2rem, 5vw, 3rem);
     letter-spacing: 0.1em;
   }
+
+  .profession {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -88,15 +88,7 @@
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     letter-spacing: 0.08em;
   }
-}
 
-@media screen and (max-width: 768px) {
-  .profession {
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
-  }
-}
-
-@media screen and (max-width: 480px) {
   .profession {
     font-size: clamp(0.8rem, 2vw, 1.2rem);
   }

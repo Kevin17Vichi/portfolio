@@ -1,11 +1,13 @@
+/* profile.css — Estilos propios del componente Profile */
+
+/* Sección con scroll-reveal — usa solo transition, no animation (evita conflicto) */
 .profile-container {
   padding: 2rem;
   margin: 2rem 0;
   margin-top: 100vh;
-  animation: fadeIn 1s ease-in;
   opacity: 0;
   transform: translateY(100px);
-  transition: all 1s ease;
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
 }
 
 .profile-container.show {
@@ -13,6 +15,7 @@
   transform: translateY(0);
 }
 
+/* Layout de dos columnas */
 .profile-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -22,6 +25,7 @@
   margin: 0 auto;
 }
 
+/* Bloque de texto con glassmorphism */
 .profile-text {
   width: 80%;
   min-height: 300px;
@@ -33,27 +37,29 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
+  background: var(--glass-bg);
+  border-radius: var(--border-radius-card);
 }
 
+/* Imagen de perfil */
 .profile-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
+  border-radius: var(--border-radius-item);
   backdrop-filter: blur(10px);
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-base);
 }
 
 .profile-image img {
   max-width: 80%;
   height: auto;
-  border-radius: 15px;
+  border-radius: var(--border-radius-card);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-base);
 }
 
+/* Card con borde interactivo */
 .card-details {
   width: 90%;
   border-radius: 20px;
@@ -61,22 +67,19 @@
   position: relative;
   padding: 1.4rem;
   border: 2px solid #c3c6ce;
-  transition: 0.5s ease-out;
+  transition: border-color var(--transition-slow), box-shadow var(--transition-slow);
   overflow: visible;
 }
 
-.card-details:hover {
-  border-color: rgb(174, 0, 255);
-  box-shadow: 0 2px 15px 0 rgb(174, 0, 255);
-}
 
+/* Título "Sobre mí" */
 .text-title {
   font-size: 2em;
   font-weight: bold;
-  color: #ffffff;
+  color: var(--primary-color);
   padding: 0.5rem 1rem;
-  border-radius: 10px;
-  transition: 0.3s ease;
+  border-radius: var(--border-radius-item);
+  transition: color var(--transition-base);
   margin-bottom: 2rem;
   width: fit-content;
   display: inline-block;
@@ -92,33 +95,34 @@
   transform: translateX(-50%);
   width: 50px;
   height: 3px;
-  background: rgb(174, 0, 255);
+  background: var(--accent-color);
   border-radius: 2px;
 }
 
+/* Cuerpo de texto */
 .text-body {
-  color: rgb(255, 255, 255);
+  color: var(--primary-color);
+  line-height: 1.7;
 }
 
+/* Botón flotante en hover */
 .card-button {
   transform: translate(-50%, 125%);
   width: 50%;
   border-radius: 1rem;
   border: none;
-  background-color: rgb(174, 0, 255);
+  background-color: var(--accent-color);
   color: #fff;
   font-size: 1rem;
+  font-family: var(--font-family);
+  font-weight: 600;
   padding: 0.5rem 1rem;
   position: absolute;
   left: 50%;
   bottom: 0;
   opacity: 0;
-  transition: 0.3s ease-out;
+  transition: opacity var(--transition-base), transform var(--transition-base);
   cursor: pointer;
-}
-
-.profile-text:hover {
-  border-color: #008bf8;
 }
 
 .profile-text:hover .card-button {
@@ -126,8 +130,13 @@
   opacity: 1;
 }
 
+/* Media queries */
 @media (max-width: 768px) {
   .profile-content {
     grid-template-columns: 1fr;
+  }
+
+  .profile-text {
+    width: 100%;
   }
 }

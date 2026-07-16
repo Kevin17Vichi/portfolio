@@ -1,27 +1,44 @@
-.hobbies-section {
-  padding: 4rem 2rem;
+/* education.css — Estilos propios del componente Education (mismo patrón que skills.css) */
+
+/* Sección con scroll-reveal */
+.education-section {
+  padding: var(--section-padding);
   text-align: center;
-  max-width: 1400px;
+  max-width: var(--section-max-width);
   margin: 0 auto;
   opacity: 0;
   transform: translateY(50px);
-  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
 }
 
-.hobbies-section.show {
+.education-section.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-.hobbies-title {
+/* Contenedor principal — igual que .skills-container */
+.education-container {
+  background: var(--glass-bg);
+  padding: 2rem;
+  border-radius: var(--border-radius-card);
+  backdrop-filter: blur(10px);
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Título de sección — igual que .skills-title */
+.education-title {
   font-size: 2rem;
-  color: #ffffff;
+  color: var(--primary-color);
   margin-bottom: 2rem;
   position: relative;
   display: inline-block;
 }
 
-.hobbies-title::after {
+.education-title::after {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -29,80 +46,91 @@
   transform: translateX(-50%);
   width: 50px;
   height: 3px;
-  background: rgb(174, 0, 255);
+  background: var(--accent-color);
   border-radius: 2px;
 }
 
-.hobbies-container {
+/* Grupo (Formación Académica / Capacitaciones) — igual que .category-group */
+.education-group-wrapper {
+  width: 100%;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.education-subtitle {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.education-subtitle::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+}
+
+/* Grid de tarjetas dentro de cada grupo*/
+.education-group {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s ease-in-out;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+  max-width: var(--section-max-width);
 }
 
-.hobbies-section.show .hobbies-container {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.3s;
-}
-
-.hobby-card {
+/* Tarjeta individual — mantiene tu diseño de imagen + overlay hover */
+.education-card {
   position: relative;
   height: clamp(250px, 40vw, 300px);
   width: 100%;
   padding: 0;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  background: var(--glass-card);
+  border-radius: var(--border-radius-item);
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.3s ease-in-out;
 }
 
-.hobbies-section.show .hobby-card {
+.education-section.show .education-card {
   opacity: 1;
   transform: translateY(0);
 }
 
-.hobbies-section.show .hobby-card:nth-child(1) {
-  transition-delay: 0.4s;
-}
-.hobbies-section.show .hobby-card:nth-child(2) {
-  transition-delay: 0.6s;
-}
-.hobbies-section.show .hobby-card:nth-child(3) {
-  transition-delay: 0.8s;
-}
+/* Stagger delays por grupo — igual patrón que category-group en skills.css */
+.education-section.show .education-group-wrapper:nth-child(2) .education-card { transition-delay: 0.4s; }
+.education-section.show .education-group-wrapper:nth-child(3) .education-card { transition-delay: 0.6s; }
 
-.hobby-card:hover {
+.education-card:hover {
   transform: translateY(-5px);
 }
 
-.hobby-image {
+/* Imagen de fondo */
+.education-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   position: absolute;
-  transition: 0.3s ease;
-  /* Para PDF: quitar blur en hover */
+  transition: transform var(--transition-base);
 }
 
-.hobby-card:hover .hobby-image {
-  /* No aplicar blur a PDF */
+.education-card:hover .education-image {
   transform: scale(1.05);
 }
 
-.hobby-textBox {
+/* Overlay de texto al hacer hover */
+.education-textBox {
   opacity: 0;
   position: absolute;
   inset: 0;
@@ -111,21 +139,52 @@
   justify-content: center;
   align-items: center;
   padding: clamp(0.5rem, 2vw, 1rem);
-  color: #ffffff;
-  transition: 0.3s ease;
+  color: var(--primary-color);
+  transition: opacity var(--transition-base);
 }
 
-.hobby-card:hover .hobby-textBox {
+.education-card:hover .education-textBox {
   opacity: 1;
   background: rgba(0, 0, 0, 0.7);
 }
 
-.hobby-name {
+.education-name {
   font-size: clamp(1.5rem, 2vw, 2rem);
   margin-bottom: 1rem;
 }
 
-.hobby-description {
+.education-description {
   font-size: clamp(1rem, 1.5vw, 1.2rem);
   text-align: center;
+  line-height: 1.6;
+}
+
+.education-pending-tag {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent-color);
+  border-radius: 999px;
+}
+
+.education-link {
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.education-link:hover {
+  transform: scale(1.1);
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .education-group {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 }

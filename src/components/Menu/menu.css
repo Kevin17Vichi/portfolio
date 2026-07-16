@@ -1,7 +1,9 @@
+/* menu.css — Estilos del menú de navegación 3D */
+
 .menu-container {
-  position: absolute; /* Cambiado de fixed a absolute */
+  position: absolute;
   left: 70px;
-  top: 20px; /* Añadido para control preciso de la posición */
+  top: 20px;
   z-index: 100;
   transform: translateY(-92vh);
 }
@@ -19,19 +21,16 @@
   width: 100px;
   background-color: rgb(46, 46, 46);
   padding: 8px;
-  transition: 0.5s;
+  transition: background-color 0.5s, transform 0.5s;
   z-index: var(--i);
 }
 
-.menu-link:active {
-  transform: scale(0.95);
-}
-
 .menu-item:hover {
-  background-color: rgb(174, 0, 255);
+  background-color: var(--accent-color);
   transform: translateX(-20px);
 }
 
+/* Cara izquierda del efecto 3D */
 .menu-item::before {
   content: "";
   position: absolute;
@@ -42,13 +41,14 @@
   background-color: #2e3133;
   transform-origin: right;
   transform: skewY(45deg);
-  transition: 0.5s;
+  transition: background-color 0.5s;
 }
 
 .menu-item:hover::before {
-  background-color: rgb(174, 0, 255);
+  background-color: var(--accent-color);
 }
 
+/* Cara superior del efecto 3D */
 .menu-item::after {
   content: "";
   position: absolute;
@@ -59,13 +59,14 @@
   background-color: #35383e;
   transform-origin: bottom;
   transform: skewX(45deg);
-  transition: 0.5s;
+  transition: background-color 0.5s;
 }
 
 .menu-item:hover::after {
-  background-color: rgb(174, 0, 255);
+  background-color: var(--accent-color);
 }
 
+/* Links de navegación */
 .menu-link {
   text-decoration: none;
   color: #d9d9d9;
@@ -74,22 +75,18 @@
   letter-spacing: 0.05em;
   font-size: 0.8em;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: color var(--transition-base);
 }
 
-@keyframes smoothScroll {
-  0% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+.menu-link:active {
+  transform: scale(0.95);
 }
 
 .menu-item:hover .menu-link {
-  color: #ddd;
+  color: #ffffff;
 }
 
+/* Media queries */
 @media screen and (max-width: 768px) {
   .menu-container {
     left: 70px;

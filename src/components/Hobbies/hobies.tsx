@@ -26,10 +26,10 @@ const Hobbies = () => {
     <section
       ref={ref}
       id="hobbies"
-      className={`hobbies-section ${isInView ? "show" : ""}`}
-    >
-      <h2 className="hobbies-title">Mis Hobbies</h2>
+      className={`hobbies-section ${isInView ? "show" : ""}`}>
+      
       <div className="hobbies-container">
+        <h2 className="hobbies-title">Mis Hobbies</h2>
         {hobbies.map((hobby, index) => (
           <div key={index} className="hobby-card">
             <img src={hobby.image} alt={hobby.name} className="hobby-image" width={300} height={200} />

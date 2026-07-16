@@ -1,101 +1,149 @@
 import { useInView } from "../../Hook/hook";
 import "./education.css";
 
-const educations = [
+type EducationItem = {
+  id: number;
+  name: string;
+  image: string;
+  description: string;
+  url?: string;
+  type: "academica" | "capacitacion";
+  pending?: boolean;
+};
+
+const educations: EducationItem[] = [
   {
+    id: 100,
+    name: "U. E. Juan Abel Echeverría",
+    image: "/jae.webp",
+    description: "Bachiller Técnico Industrial — Instalaciones, Equipos y Máquinas Eléctricas",
+    url: "/bachiller.pdf",
+    type: "academica",
+  },
+  {
+    id: 101,
+    name: "Universidad Técnica de Ambato",
+    image: "/uta.webp",
+    description: "Ingeniero en Software",
+    type: "academica",
+    pending: true,
+  },
+  {
+    id: 1,
     name: "Google Activate",
     image: "/google.jpeg",
     description: "Competencias digitales para profesionales",
-    link: "https://skillshop.exceedlms.com/student/award/WYCNNjn3HaJain3uSs8wE81f",
+    url: "https://skillshop.exceedlms.com/student/award/WYCNNjn3HaJain3uSs8wE81f",
+    type: "capacitacion",
   },
   {
-    name: "Certificado UTA",
-    image: "/uta.webp",
-    description: "Emerging Research Frontiers in Computer, Science, Electronics and Industrial Engineering",
-    link: "https://utaep.com.ec/bdpnew/UPLOAD/CERTIFICADOS/C416/APROBACION/C416_APROBA_0550128375_VICHICELACASA.PDF",
-  },
-    {
-    name: "Certificado UTA",
-    image: "/uta.webp",
-    description: "VI Conference on Computer Science, Electronics and Industrial Engineering",
-    link: "https://utaep.com.ec/bdpnew/UPLOAD/CERTIFICADOS/C416/PARTICIPACION/20241105_C416_PART_0550128375_VICHICELACASA.PDF",
-  },
-    {
+    id: 4,
     name: "Google Activate",
     image: "/google.jpeg",
     description: "Curso de Desarrollo de Apps Móviles",
-    link: "https://skillshop.exceedlms.com/student/award/4gsPiRQs1dxTwVcWiW7qKjXA",
+    url: "https://skillshop.exceedlms.com/student/award/4gsPiRQs1dxTwVcWiW7qKjXA",
+    type: "capacitacion",
   },
-    {
+  {
+    id: 5,
     name: "Curso SUDEN",
     image: "/suden.webp",
     description: "ESPECIALIDAD TÉCNICA",
-    pdf: "/tecnica.pdf",
+    url: "/tecnica.pdf",
+    type: "capacitacion",
   },
-    {
+  {
+    id: 6,
     name: "Curso SUDEN",
     image: "/suden.webp",
-    description: "EXPERTO (A) EN ENSAMBLAJE DE COMPUTADORAS, CELULARES E IMPRESORAS",
-    pdf: "/ensamblaje.pdf",
+    description:
+      "EXPERTO (A) EN ENSAMBLAJE DE COMPUTADORAS, CELULARES E IMPRESORAS",
+    url: "/ensamblaje.pdf",
+    type: "capacitacion",
   },
-    {
+  {
+    id: 7,
     name: "Curso SUDEN",
     image: "/suden.webp",
-    description: "EXPERTO (A) EN REPARACIÓN DE COMPUTADORAS, CELULARES E IMPRESORAS",
-    pdf: "/reparacion.pdf",
+    description:
+      "EXPERTO (A) EN REPARACIÓN DE COMPUTADORAS, CELULARES E IMPRESORAS",
+    url: "/reparacion.pdf",
+    type: "capacitacion",
   },
-    {
+  {
+    id: 8,
     name: "Curso SUDEN",
     image: "/suden.webp",
     description: "EXPERTO (A) TÉCNICO INTERNACIONAL",
-    pdf: "/internacional.pdf",
+    url: "/internacional.pdf",
+    type: "capacitacion",
   },
-    {
-    name: "Fundacion Carlos Slim",
-    image: "/suden.webp",
-    description: "Fundamentos de Machine Learning",
-    link: "https://capacitateparaelempleo.org/verifica/9094cb1a-0003-4fdf-b0a0-932f591c6a4c/e85dc447-ab36-4aa2-8bee-f8b82eed9c12",
-  },
-    {
-    name: "Fundacion Carlos Slim",
+  {
+    id: 9,
+    name: "Fundación Carlos Slim",
     image: "/CS.webp",
     description: "Fundamentos de Machine Learning",
-    link: "https://capacitateparaelempleo.org/verifica/9094cb1a-0003-4fdf-b0a0-932f591c6a4c/e85dc447-ab36-4aa2-8bee-f8b82eed9c12",
+    url: "https://capacitateparaelempleo.org/verifica/9094cb1a-0003-4fdf-b0a0-932f591c6a4c/e85dc447-ab36-4aa2-8bee-f8b82eed9c12",
+    type: "capacitacion",
   },
 ];
 
+const academicas = educations.filter((e) => e.type === "academica");
+const capacitaciones = educations.filter((e) => e.type === "capacitacion");
+
 const Education = () => {
   const { ref, isInView } = useInView();
+
+  const renderCard = (edu: EducationItem) => (
+    <div key={edu.id} className="education-card">
+      <img
+        src={edu.image}
+        alt={edu.name}
+        className="education-image"
+        width={300}
+        height={200}
+      />
+      <div className="education-textBox">
+        <h3 className="education-name">{edu.name}</h3>
+        <p className="education-description">{edu.description}</p>
+        {edu.pending && <span className="education-pending-tag">En trámite</span>}
+        {edu.url && (
+          <a
+            href={edu.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="education-link"
+            aria-label={`Ver certificado de ${edu.name}`}
+          >
+            📄
+          </a>
+        )}
+      </div>
+    </div>
+  );
 
   return (
     <section
       ref={ref}
       id="education"
-      className={`hobbies-section ${isInView ? "show" : ""}`}
+      className={`education-section ${isInView ? "show" : ""}`}
     >
-      <h2 className="hobbies-title">Mi Educación</h2>
-      <div className="hobbies-container">
-        {educations.map((edu, index) => (
-          <div key={index} className="hobby-card">
-            <img src={edu.image} alt={edu.name} className="hobby-image" width={300} height={200} />
-            <div className="hobby-textBox">
-              <h3 className="hobby-name">{edu.name}</h3>
-              <p className="hobby-description">{edu.description}</p>
-              {(edu.pdf || edu.link) && (
-                <a
-                  href={edu.link ? edu.link : edu.pdf}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="pdf-link"
-                  title="Ver Certificado"
-                  style={{ fontSize: "2rem", marginTop: "1rem", color: "#fff" }}
-                >
-                  📄
-                </a>
-              )}
-            </div>
+      <div className="education-container">
+        <h2 className="education-title">Mi Educación</h2>
+
+        <div className="education-group-wrapper">
+          <h3 className="education-subtitle">Formación Académica</h3>
+          <div className="education-group">
+            {academicas.map(renderCard)}
           </div>
-        ))}
+        </div>
+
+        <div className="education-group-wrapper">
+          <h3 className="education-subtitle">Capacitaciones</h3>
+          <div className="education-group">
+            {capacitaciones.map(renderCard)}
+          </div>
+        </div>
       </div>
     </section>
   );

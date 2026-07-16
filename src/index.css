@@ -1,18 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+/* ============================================================
+   VARIABLES GLOBALES
+   ============================================================ */
 :root {
   --primary-color: #ffffff;
-  --font-family: "Poppins", serif;
+  --accent-color: rgb(174, 0, 255);
+  --accent-rgb: 174, 0, 255;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-card: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --font-family: "Poppins", sans-serif;
+  --section-padding: 4rem 2rem;
+  --section-max-width: 1400px;
+  --border-radius-card: 15px;
+  --border-radius-item: 10px;
+  --transition-base: 0.3s ease;
+  --transition-slow: 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
   background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
-  overflow: hidden;
-  overflow-y: auto;
+  overflow-x: hidden;
   font-family: var(--font-family);
+  color: var(--primary-color);
 }
 
 #root {
@@ -21,6 +38,90 @@ body {
   position: relative;
 }
 
-* {
-  font-family: var(--font-family);
+/* ============================================================
+   ANIMACIONES GLOBALES
+   ============================================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   CLASES UTILITARIAS COMPARTIDAS
+   ============================================================ */
+
+/* Sección base con scroll-reveal */
+.section {
+  padding: var(--section-padding);
+  text-align: center;
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Título de sección con línea decorativa */
+.section-title {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+/* Contenedor glassmorphism */
+.glass-card {
+  background: var(--glass-bg);
+  border-radius: var(--border-radius-card);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+}
+
+/* ============================================================
+   ACCESIBILIDAD
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

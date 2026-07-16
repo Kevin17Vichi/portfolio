@@ -17,10 +17,7 @@ const Profile = () => {
           <h2 className="text-title">Objetivo Profesional</h2>
           <div className="card-details">
             <p className="text-body">
-              Crear experiencias web únicas, accesibles y visualmente
-              impactantes, combinando creatividad y tecnología para resolver
-              problemas reales y conectar con las personas a través de
-              interfaces intuitivas y funcionales.
+              Desarrollador Full Stack orientado al desarrollo móvil nativo con Inteligencia Artificial y Visión Computacional integrada. Busco aportar en el diseño de soluciones de software eficientes, escalables y con procesamiento inteligente local.
             </p>
           </div>
         </div>
