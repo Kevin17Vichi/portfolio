@@ -9,10 +9,10 @@ const SocialLinks = () => {
     <section
       ref={ref}
       id="social"
-      className={`social-section ${isInView ? "show" : ""}`}
+      className={`section ${isInView ? "show" : ""}`}
     >
-      <div className="social-container">
-        <h2 className="social-title">Mis Redes</h2>
+      <div className="social-container glass-card">
+        <h2 className="section-title">Mis Redes</h2>
 
         <div className="social-icons">
           <a
@@ -61,7 +61,7 @@ const SocialLinks = () => {
             </div>
           </a>
           <a
-            href="mailto:kvichicela8375@uta.edu.ec"
+            href="mailto:jaevichicela@hotmail.com"
             target="_blank"
             rel="noopener noreferrer"
             className="social-icon email"

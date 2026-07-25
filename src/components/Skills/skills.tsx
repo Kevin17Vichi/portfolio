@@ -8,12 +8,8 @@ const Skills = () => {
       category: "Lenguajes",
       skills: [
         {
-          name: "HTML5",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-        },
-        {
-          name: "CSS3",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+          name: "Java",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
         },
         {
           name: "JavaScript",
@@ -28,8 +24,8 @@ const Skills = () => {
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
         },
         {
-          name: "Kotlin",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg",
+          name: "PHP",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
         },
       ],
     },
@@ -37,8 +33,20 @@ const Skills = () => {
       category: "Frontend",
       skills: [
         {
+          name: "HTML5",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+        },
+        {
+          name: "CSS3",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+        },
+        {
           name: "React",
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+        },
+        {
+          name: "Next.js",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
         },
         {
           name: "Vue.js",
@@ -47,10 +55,6 @@ const Skills = () => {
         {
           name: "Angular",
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
-        },
-        {
-          name: "Next",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
         },
       ],
     },
@@ -62,9 +66,14 @@ const Skills = () => {
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
         },
         {
-          name: "PHP",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+          name: "Express.js",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
         },
+      ],
+    },
+    {
+      category: "Bases de Datos",
+      skills: [
         {
           name: "MySQL",
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
@@ -76,6 +85,23 @@ const Skills = () => {
         {
           name: "Firebase",
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+        },
+        {
+          name: "MariaDB",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mariadb/mariadb-original.svg",
+        }
+      ],
+    },
+    {
+      category: "Desarrollo Móvil",
+      skills: [
+        {
+          name: "Kotlin",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg",
+        },
+        {
+          name: "Ionic",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original.svg",
         },
       ],
     },
@@ -93,36 +119,6 @@ const Skills = () => {
       ],
     },
     {
-      category: "Desarrollo Móvil",
-      skills: [
-        {
-          name: "Android",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg",
-        },
-        {
-          name: "IOS",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg",
-        },
-      ],
-    },
-    {
-      category: "Estilos",
-      skills: [
-        {
-          name: "Tailwind",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
-        },
-        {
-          name: "Bootstrap",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
-        },
-        {
-          name: "Sass",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg",
-        },
-      ],
-    },
-    {
       category: "Diseño UI/UX",
       skills: [
         {
@@ -136,7 +132,7 @@ const Skills = () => {
       ],
     },
     {
-      category: "Herramientas de Desarrollo",
+      category: "Herramientas",
       skills: [
         {
           name: "VS Code",
@@ -162,10 +158,10 @@ const Skills = () => {
     <section
       ref={ref}
       id="skills"
-      className={`skills-section ${isInView ? "show" : ""}`}
+      className={`section ${isInView ? "show" : ""}`}
     >
-      <div className="skills-container">
-        <h2 className="skills-title">Habilidades</h2>
+      <div className="skills-container glass-card">
+        <h2 className="section-title">Habilidades</h2>
         {skillCategories.map((category, categoryIndex) => (
           <div key={categoryIndex} className="category-group">
             <h3 className="category-title">{category.category}</h3>

@@ -1,18 +1,8 @@
 /* profile.css — Estilos propios del componente Profile */
 
 /* Sección con scroll-reveal — usa solo transition, no animation (evita conflicto) */
-.profile-container {
-  padding: 2rem;
-  margin: 2rem 0;
+.profile-section {
   margin-top: 100vh;
-  opacity: 0;
-  transform: translateY(100px);
-  transition: opacity var(--transition-slow), transform var(--transition-slow);
-}
-
-.profile-container.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* Layout de dos columnas */
@@ -30,15 +20,12 @@
   width: 80%;
   min-height: 300px;
   position: relative;
-  padding: 1.8rem;
   overflow: visible;
   box-shadow: 5px 10px 25px 15px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--glass-bg);
-  border-radius: var(--border-radius-card);
 }
 
 /* Imagen de perfil */
@@ -71,33 +58,6 @@
   overflow: visible;
 }
 
-
-/* Título "Sobre mí" */
-.text-title {
-  font-size: 2em;
-  font-weight: bold;
-  color: var(--primary-color);
-  padding: 0.5rem 1rem;
-  border-radius: var(--border-radius-item);
-  transition: color var(--transition-base);
-  margin-bottom: 2rem;
-  width: fit-content;
-  display: inline-block;
-  text-align: center;
-  position: relative;
-}
-
-.text-title::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 3px;
-  background: var(--accent-color);
-  border-radius: 2px;
-}
 
 /* Cuerpo de texto */
 .text-body {

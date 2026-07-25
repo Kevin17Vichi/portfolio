@@ -42,10 +42,10 @@ const Contact = () => {
     <section
       ref={ref}
       id="contact"
-      className={`contact-section ${isInView ? "show" : ""}`}
+      className={`section ${isInView ? "show" : ""}`}
     >
-      <div className="contact-container">
-        <h2 className="contact-title">Contáctame</h2>
+      <div className="contact-container glass-card">
+        <h2 className="section-title">Contáctame</h2>
         <div className="contact-content">
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">

@@ -1,59 +1,20 @@
-/* hobbies.css — Estilos propios del componente Hobbies */
-
-/* Sección con scroll-reveal */
-.hobbies-section {
-  padding: var(--section-padding);
-  text-align: center;
-  max-width: var(--section-max-width);
-  margin: 0 auto;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity var(--transition-slow), transform var(--transition-slow);
-}
-
-.hobbies-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Título */
-.hobbies-title {
-  grid-column: 1 / -1;
-  font-size: 2rem;
-  color: var(--primary-color);
-  margin-bottom: 2rem;
-  position: relative;
-  display: inline-block;
-}
-
-.hobbies-title::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 3px;
-  background: var(--accent-color);
-  border-radius: 2px;
-}
-
-/* Grid de tarjetas */
+/* Contenedor principal */
 .hobbies-container {
   margin: 0 auto;
   margin-bottom: 4rem;
-  background: var(--glass-bg);
-  padding: 2rem;
-  border-radius: var(--border-radius-card);
-  backdrop-filter: blur(10px);
   transition: all var(--transition-base);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
   max-width: var(--section-max-width);
 }
 
-.hobbies-section.show .hobbies-container {
+/* Grid de tarjetas */
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.section.show .hobbies-container {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 0.3s;
@@ -77,15 +38,15 @@
   transition: opacity var(--transition-base), transform var(--transition-base);
 }
 
-.hobbies-section.show .hobby-card {
+.section.show .hobby-card {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* Stagger delays */
-.hobbies-section.show .hobby-card:nth-child(1) { transition-delay: 0.4s; }
-.hobbies-section.show .hobby-card:nth-child(2) { transition-delay: 0.6s; }
-.hobbies-section.show .hobby-card:nth-child(3) { transition-delay: 0.8s; }
+.section.show .hobby-card:nth-child(1) { transition-delay: 0.4s; }
+.section.show .hobby-card:nth-child(2) { transition-delay: 0.6s; }
+.section.show .hobby-card:nth-child(3) { transition-delay: 0.8s; }
 
 .hobby-card:hover {
   transform: translateY(-5px);

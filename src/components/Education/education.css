@@ -1,27 +1,7 @@
-/* education.css — Estilos propios del componente Education (mismo patrón que skills.css) */
+/* Estilos propios del componente Education*/
 
-/* Sección con scroll-reveal */
-.education-section {
-  padding: var(--section-padding);
-  text-align: center;
-  max-width: var(--section-max-width);
-  margin: 0 auto;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity var(--transition-slow), transform var(--transition-slow);
-}
-
-.education-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Contenedor principal — igual que .skills-container */
+/* Contenedor principal */
 .education-container {
-  background: var(--glass-bg);
-  padding: 2rem;
-  border-radius: var(--border-radius-card);
-  backdrop-filter: blur(10px);
   max-width: 1500px;
   margin: 0 auto;
   display: flex;
@@ -29,28 +9,7 @@
   gap: 2rem;
 }
 
-/* Título de sección — igual que .skills-title */
-.education-title {
-  font-size: 2rem;
-  color: var(--primary-color);
-  margin-bottom: 2rem;
-  position: relative;
-  display: inline-block;
-}
-
-.education-title::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 3px;
-  background: var(--accent-color);
-  border-radius: 2px;
-}
-
-/* Grupo (Formación Académica / Capacitaciones) — igual que .category-group */
+/* Grupo (Formación Académica / Capacitaciones)*/
 .education-group-wrapper {
   width: 100%;
   margin-bottom: 2rem;
@@ -85,7 +44,7 @@
   max-width: var(--section-max-width);
 }
 
-/* Tarjeta individual — mantiene tu diseño de imagen + overlay hover */
+/* Tarjeta individual */
 .education-card {
   position: relative;
   height: clamp(250px, 40vw, 300px);
@@ -103,14 +62,14 @@
   transform: translateY(20px);
 }
 
-.education-section.show .education-card {
+.section.show .education-card {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* Stagger delays por grupo — igual patrón que category-group en skills.css */
-.education-section.show .education-group-wrapper:nth-child(2) .education-card { transition-delay: 0.4s; }
-.education-section.show .education-group-wrapper:nth-child(3) .education-card { transition-delay: 0.6s; }
+.section.show .education-group-wrapper:nth-child(2) .education-card { transition-delay: 0.4s; }
+.section.show .education-group-wrapper:nth-child(3) .education-card { transition-delay: 0.6s; }
 
 .education-card:hover {
   transform: translateY(-5px);

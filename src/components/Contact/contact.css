@@ -1,50 +1,9 @@
 /* contact.css — Estilos propios del componente Contact */
 
-/* Sección con scroll-reveal */
-.contact-section {
-  padding: var(--section-padding);
-  text-align: center;
-  max-width: var(--section-max-width);
-  margin: 0 auto;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity var(--transition-slow), transform var(--transition-slow);
-}
-
-.contact-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* Contenedor glassmorphism */
 .contact-container {
   margin-bottom: 4rem;
-  background: var(--glass-bg);
-  padding: 2rem;
-  border-radius: var(--border-radius-card);
-  backdrop-filter: blur(10px);
   animation: fadeIn 1s ease-in; /* @keyframes en index.css */
-}
-
-/* Título */
-.contact-title {
-  font-size: 2rem;
-  color: var(--primary-color);
-  margin-bottom: 2rem;
-  position: relative;
-  display: inline-block;
-}
-
-.contact-title::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 3px;
-  background: var(--accent-color);
-  border-radius: 2px;
 }
 
 /* Formulario */
@@ -128,9 +87,5 @@
 @media (max-width: 768px) {
   .contact-container {
     padding: 1.5rem;
-  }
-
-  .contact-title {
-    font-size: 1.5rem;
   }
 }

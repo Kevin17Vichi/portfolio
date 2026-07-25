@@ -31,7 +31,7 @@ const educations: EducationItem[] = [
   {
     id: 1,
     name: "Google Activate",
-    image: "/google.jpeg",
+    image: "/google.webp",
     description: "Competencias digitales para profesionales",
     url: "https://skillshop.exceedlms.com/student/award/WYCNNjn3HaJain3uSs8wE81f",
     type: "capacitacion",
@@ -39,7 +39,7 @@ const educations: EducationItem[] = [
   {
     id: 4,
     name: "Google Activate",
-    image: "/google.jpeg",
+    image: "/google.webp",
     description: "Curso de Desarrollo de Apps Móviles",
     url: "https://skillshop.exceedlms.com/student/award/4gsPiRQs1dxTwVcWiW7qKjXA",
     type: "capacitacion",
@@ -126,10 +126,10 @@ const Education = () => {
     <section
       ref={ref}
       id="education"
-      className={`education-section ${isInView ? "show" : ""}`}
+      className={`section ${isInView ? "show" : ""}`}
     >
-      <div className="education-container">
-        <h2 className="education-title">Mi Educación</h2>
+      <div className="education-container glass-card">
+        <h2 className="section-title">Mi Educación</h2>
 
         <div className="education-group-wrapper">
           <h3 className="education-subtitle">Formación Académica</h3>

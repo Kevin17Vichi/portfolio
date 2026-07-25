@@ -1,51 +1,6 @@
-/* social.css — Estilos propios del componente Social */
-/* El @keyframes fadeIn está en index.css */
-
-/* Sección con scroll-reveal */
-.social-section {
-  padding: var(--section-padding);
-  text-align: center;
-  max-width: var(--section-max-width);
-  margin: 0 auto;
-  color: var(--primary-color);
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity var(--transition-slow), transform var(--transition-slow);
-}
-
-.social-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Título */
-.social-title {
-  font-size: 2rem;
-  color: var(--primary-color);
-  margin-bottom: 2rem;
-  position: relative;
-  display: inline-block;
-}
-
-.social-title::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 3px;
-  background: var(--accent-color);
-  border-radius: 2px;
-}
-
 /* Contenedor glassmorphism */
 .social-container {
-  background: var(--glass-bg);
-  padding: 2rem;
-  border-radius: var(--border-radius-card);
-  backdrop-filter: blur(10px);
-  animation: fadeIn 1s ease-in; /* @keyframes en index.css */
+  animation: fadeIn 1s ease-in; 
 }
 
 /* Grid de iconos sociales */

@@ -1,36 +1,11 @@
 /* skills.css — Estilos propios del componente Skills */
 
 .skills-container {
-  background: var(--glass-bg);
-  padding: 2rem;
-  border-radius: var(--border-radius-card);
-  backdrop-filter: blur(10px);
   max-width: 1500px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-}
-
-/* Título de sección (usa la clase compartida .section-title de index.css) */
-.skills-title {
-  font-size: 2rem;
-  color: var(--primary-color);
-  margin-bottom: 2rem;
-  position: relative;
-  display: inline-block;
-}
-
-.skills-title::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 3px;
-  background: var(--accent-color);
-  border-radius: 2px;
 }
 
 /* Grupo de categoría */
@@ -66,22 +41,6 @@
   margin-top: 1.5rem;
 }
 
-/* Sección con scroll-reveal (clases compartidas aplicadas desde index.css via .section) */
-.skills-section {
-  padding: var(--section-padding);
-  text-align: center;
-  max-width: var(--section-max-width);
-  margin: 0 auto;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity var(--transition-slow), transform var(--transition-slow);
-}
-
-.skills-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* Item de habilidad individual */
 .skill-item {
   display: flex;
@@ -97,16 +56,16 @@
   transform: translateY(20px);
 }
 
-.skills-section.show .skill-item {
+.section.show .skill-item {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* Stagger delays por categoría */
-.skills-section.show .category-group:nth-child(1) .skill-item { transition-delay: 0.4s; }
-.skills-section.show .category-group:nth-child(2) .skill-item { transition-delay: 0.6s; }
-.skills-section.show .category-group:nth-child(3) .skill-item { transition-delay: 0.8s; }
-.skills-section.show .category-group:nth-child(4) .skill-item { transition-delay: 1s; }
+.section.show .category-group:nth-child(1) .skill-item { transition-delay: 0.4s; }
+.section.show .category-group:nth-child(2) .skill-item { transition-delay: 0.6s; }
+.section.show .category-group:nth-child(3) .skill-item { transition-delay: 0.8s; }
+.section.show .category-group:nth-child(4) .skill-item { transition-delay: 1s; }
 
 
 
