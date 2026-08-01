@@ -16,7 +16,7 @@ const SocialLinks = () => {
 
         <div className="social-icons">
           <a
-            href="https://github.com/KevinVichi"
+            href="https://github.com/Kevin17Vichi"
             target="_blank"
             rel="noopener noreferrer"
             className="social-icon github"

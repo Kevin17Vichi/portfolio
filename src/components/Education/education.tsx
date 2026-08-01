@@ -26,7 +26,7 @@ const educations: EducationItem[] = [
     image: "/uta.webp",
     description: "Ingeniero en Software",
     type: "academica",
-    pending: true,
+    url: "/ingeniero.pdf",
   },
   {
     id: 1,
