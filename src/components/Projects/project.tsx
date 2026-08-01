@@ -56,7 +56,7 @@ const projects: Project[] = [
     title: "Portafolio",
     category: "Portafolio profesional",
     image: "/portafolio.webp",
-    github: "https://github.com/KevinVichi/portfolio",
+    github: "https://github.com/Kevin17Vichi",
     technologies: ["React", "Node", "TypeScript"],
   },
   {
