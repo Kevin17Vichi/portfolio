@@ -13,6 +13,12 @@
   flex-direction: column;
 }
 
+ @media (max-width: 768px) {
+  .content {
+    height: 100dvh;
+  }
+}
+
 .profession {
   /* font-family heredada de body vía index.css */
   font-size: clamp(1.5rem, 3vw, 2.5rem);
