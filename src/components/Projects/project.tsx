@@ -1,5 +1,6 @@
 import "./project.css";
 import { useInView } from "../../Hook/hook";
+import { useLanguage } from "../../context/LanguageContext";
 
 type Project = {
   id: number; 
@@ -79,16 +80,16 @@ const projects: Project[] = [
 
 const Projects = () => {
   const { ref, isInView } = useInView();
+  const { t } = useLanguage();
 
   return (
     <section
       ref={ref}
       id="projects"
-      className={`section ${isInView ? "show" : ""}`}>
-
-      
+      className={`section ${isInView ? "show" : ""}`}
+    >
       <div className="projects-container glass-card">
-        <h2 className="section-title">Mis Proyectos</h2>
+        <h2 className="section-title">{t.projects.title}</h2>
         <div className="projects-grid">
           {projects.map((project) => (
             <div className="card" key={project.id}>

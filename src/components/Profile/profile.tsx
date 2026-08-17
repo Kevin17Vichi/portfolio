@@ -1,8 +1,11 @@
 import "./profile.css";
 import { useInView } from "../../Hook/hook";
+import { useLanguage } from "../../context/LanguageContext";
 
 const Profile = () => {
   const { ref, isInView } = useInView();
+  const { t } = useLanguage();
+
   return (
     <section
       ref={ref}
@@ -11,14 +14,12 @@ const Profile = () => {
     >
       <div className="profile-content">
         <div className="profile-image">
-          <img src="/foto4.webp" alt="Foto de perfil" width={500} height={400}/>
+          <img src="/foto4.webp" alt="Foto de perfil" width={500} height={400} />
         </div>
         <div className="profile-text glass-card">
-          <h2 className="section-title">Objetivo Profesional</h2>
+          <h2 className="section-title">{t.profile.title}</h2>
           <div className="card-details">
-            <p className="text-body">
-              Desarrollador Full Stack orientado al desarrollo móvil nativo con Inteligencia Artificial y Visión Computacional integrada. Busco aportar en el diseño de soluciones de software eficientes, escalables y con procesamiento inteligente local.
-            </p>
+            <p className="text-body">{t.profile.text}</p>
           </div>
         </div>
       </div>

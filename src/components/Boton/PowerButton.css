@@ -1,8 +1,37 @@
-.button-container {
+.music-controls {
   position: fixed;
   top: 20px;
   right: 20px;
   z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.button-container {
+  position: relative;
+  top: auto;
+  right: auto;
+  z-index: 1;
+}
+
+.language-toggle {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(46, 46, 46, 0.95);
+  color: #fff;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.1);
+}
+
+.language-toggle:hover {
+  transform: translateY(-1px);
+  background-color: rgba(174, 0, 255, 0.8);
 }
 
 #checkbox {

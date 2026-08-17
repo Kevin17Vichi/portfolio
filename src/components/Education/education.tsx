@@ -1,5 +1,6 @@
 import { useInView } from "../../Hook/hook";
 import "./education.css";
+import { useLanguage } from "../../context/LanguageContext";
 
 type EducationItem = {
   id: number;
@@ -93,6 +94,7 @@ const capacitaciones = educations.filter((e) => e.type === "capacitacion");
 
 const Education = () => {
   const { ref, isInView } = useInView();
+  const { t } = useLanguage();
 
   const renderCard = (edu: EducationItem) => (
     <div key={edu.id} className="education-card">
@@ -106,7 +108,7 @@ const Education = () => {
       <div className="education-textBox">
         <h3 className="education-name">{edu.name}</h3>
         <p className="education-description">{edu.description}</p>
-        {edu.pending && <span className="education-pending-tag">En trámite</span>}
+        {edu.pending && <span className="education-pending-tag">{t.education.pending}</span>}
         {edu.url && (
           <a
             href={edu.url}
@@ -129,17 +131,17 @@ const Education = () => {
       className={`section ${isInView ? "show" : ""}`}
     >
       <div className="education-container glass-card">
-        <h2 className="section-title">Mi Educación</h2>
+        <h2 className="section-title">{t.education.title}</h2>
 
         <div className="education-group-wrapper">
-          <h3 className="education-subtitle">Formación Académica</h3>
+          <h3 className="education-subtitle">{t.education.academic}</h3>
           <div className="education-group">
             {academicas.map(renderCard)}
           </div>
         </div>
 
         <div className="education-group-wrapper">
-          <h3 className="education-subtitle">Capacitaciones</h3>
+          <h3 className="education-subtitle">{t.education.training}</h3>
           <div className="education-group">
             {capacitaciones.map(renderCard)}
           </div>

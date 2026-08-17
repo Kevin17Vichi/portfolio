@@ -1,9 +1,11 @@
 import "./social.css";
 import { FaGithub, FaLinkedin, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 import { useInView } from "../../Hook/hook";
+import { useLanguage } from "../../context/LanguageContext";
 
 const SocialLinks = () => {
   const { ref, isInView } = useInView();
+  const { t } = useLanguage();
 
   return (
     <section
@@ -12,7 +14,7 @@ const SocialLinks = () => {
       className={`section ${isInView ? "show" : ""}`}
     >
       <div className="social-container glass-card">
-        <h2 className="section-title">Mis Redes</h2>
+        <h2 className="section-title">{t.social.title}</h2>
 
         <div className="social-icons">
           <a
@@ -61,8 +63,7 @@ const SocialLinks = () => {
             </div>
           </a>
           <a
-            href="mailto:jaevichicela@hotmail.com"
-            target="_blank"
+            href="mailto:vichicelakevin@gmail.com"
             rel="noopener noreferrer"
             className="social-icon email"
             aria-label="Correo de Kevin Vichicela"

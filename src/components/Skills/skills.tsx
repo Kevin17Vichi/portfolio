@@ -1,8 +1,10 @@
 import "./skills.css";
 import { useInView } from "../../Hook/hook";
+import { useLanguage } from "../../context/LanguageContext";
 
 const Skills = () => {
   const { ref, isInView } = useInView();
+  const { t } = useLanguage();
   const skillCategories = [
     {
       category: "Lenguajes",
@@ -161,7 +163,7 @@ const Skills = () => {
       className={`section ${isInView ? "show" : ""}`}
     >
       <div className="skills-container glass-card">
-        <h2 className="section-title">Habilidades</h2>
+        <h2 className="section-title">{t.skills.title}</h2>
         {skillCategories.map((category, categoryIndex) => (
           <div key={categoryIndex} className="category-group">
             <h3 className="category-title">{category.category}</h3>

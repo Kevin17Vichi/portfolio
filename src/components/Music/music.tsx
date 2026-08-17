@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import PowerButton from "../Boton/PowerButton";
+import { useLanguage } from "../../context/LanguageContext";
 
 const Music = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const { language, setLanguage } = useLanguage();
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
@@ -52,9 +54,26 @@ const Music = () => {
     }
   };
 
+  const handleLanguageToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setLanguage(language === "en" ? "es" : "en");
+  };
+
   return (
-    <div onClick={handleToggleMusic}>
-      <PowerButton isPlaying={isPlaying} />
+    <div className="music-controls">
+      <button
+        type="button"
+        className="language-toggle"
+        onClick={handleLanguageToggle}
+        aria-label="Cambiar idioma"
+      >
+        {language === "en" ? "EN" : "ES"}
+      </button>
+
+      <div onClick={handleToggleMusic}>
+        <PowerButton isPlaying={isPlaying} />
+      </div>
     </div>
   );
 };

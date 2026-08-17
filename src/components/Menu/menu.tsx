@@ -1,6 +1,9 @@
 import "./menu.css";
+import { useLanguage } from "../../context/LanguageContext";
 
 const Menu = () => {
+  const { language, setLanguage, t } = useLanguage();
+
   const scrollToSection = (
     e: React.MouseEvent<HTMLAnchorElement>,
     sectionId: string
@@ -17,6 +20,23 @@ const Menu = () => {
 
   return (
     <div className="menu-container">
+      <div className="lang-switch">
+        <button
+          type="button"
+          onClick={() => setLanguage("es")}
+          className={language === "es" ? "active" : ""}
+        >
+          ES
+        </button>
+        <button
+          type="button"
+          onClick={() => setLanguage("en")}
+          className={language === "en" ? "active" : ""}
+        >
+          EN
+        </button>
+      </div>
+
       <ul className="menu-list">
         <li className="menu-item" style={{ "--i": 7 } as React.CSSProperties}>
           <a
@@ -24,7 +44,7 @@ const Menu = () => {
             href="#name"
             className="menu-link"
           >
-            Inicio
+            {t.menu.home}
           </a>
         </li>
         <li className="menu-item" style={{ "--i": 6 } as React.CSSProperties}>
@@ -33,7 +53,7 @@ const Menu = () => {
             href="#profile"
             className="menu-link"
           >
-            Objetivo
+            {t.menu.objective}
           </a>
         </li>
         <li className="menu-item" style={{ "--i": 5 } as React.CSSProperties}>
@@ -42,7 +62,7 @@ const Menu = () => {
             href="#skills"
             className="menu-link"
           >
-            Habilidades
+            {t.menu.skills}
           </a>
         </li>
         <li className="menu-item" style={{ "--i": 4 } as React.CSSProperties}>
@@ -51,7 +71,7 @@ const Menu = () => {
             href="#projects"
             className="menu-link"
           >
-            Proyectos
+            {t.menu.projects}
           </a>
         </li>
         <li className="menu-item" style={{ "--i": 3 } as React.CSSProperties}>
@@ -60,7 +80,7 @@ const Menu = () => {
             href="#hobbies"
             className="menu-link"
           >
-            Hobbies
+            {t.menu.hobbies}
           </a>
         </li>
         <li className="menu-item" style={{ "--i": 2 } as React.CSSProperties}>
@@ -69,7 +89,7 @@ const Menu = () => {
             href="#contact"
             className="menu-link"
           >
-            Contacto
+            {t.menu.contact}
           </a>
         </li>
         <li className="menu-item" style={{ "--i": 1 } as React.CSSProperties}>
@@ -78,7 +98,7 @@ const Menu = () => {
             href="#social"
             className="menu-link"
           >
-            Red Social
+            {t.menu.social}
           </a>
         </li>
       </ul>
