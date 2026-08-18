@@ -1,6 +1,6 @@
 import "./App.css";
 import StarsBackground from "./components/Star/StarsBackground";
-import Music from "./components/Music/music";
+import FloatingControls from "./components/Controls/FloatingControls";
 import Menu from "./components/Menu/menu";
 import Name from "./components/Name/name";
 import Profile from "./components/Profile/profile";
@@ -16,7 +16,7 @@ function App() {
     <>
       <Menu />
       <StarsBackground />
-      <Music />
+      <FloatingControls />
       <Name />
       <Profile />
       <Skills />

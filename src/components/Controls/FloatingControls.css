@@ -8,13 +8,6 @@
   gap: 12px;
 }
 
-.button-container {
-  position: relative;
-  top: auto;
-  right: auto;
-  z-index: 1;
-}
-
 .language-toggle {
   border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: rgba(46, 46, 46, 0.95);
@@ -34,33 +27,8 @@
   background-color: rgba(174, 0, 255, 0.8);
 }
 
-#checkbox {
-  display: none;
-}
-
-.switch {
-  position: relative;
-  width: fit-content;
-  padding: 10px 20px;
-  background-color: rgb(46, 46, 46);
-  border-radius: 50px;
-  z-index: 1;
-  cursor: pointer;
+.power-button-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  color: white;
-  font-size: 0.9em;
-  font-weight: 600;
-  transition: all 0.3s;
-}
-
-.switch svg path {
-  fill: white;
-}
-
-#checkbox:checked + .switch {
-  background-color: rgb(174, 0, 255);
-  box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.63);
 }

@@ -1,4 +1,4 @@
-import { useInView } from "../../Hook/hook";
+import { useInView } from "../../hooks/useInView";
 import "./education.css";
 import { useLanguage } from "../../context/LanguageContext";
 

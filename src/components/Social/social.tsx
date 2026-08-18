@@ -1,6 +1,6 @@
 import "./social.css";
 import { FaGithub, FaLinkedin, FaWhatsapp, FaEnvelope } from "react-icons/fa";
-import { useInView } from "../../Hook/hook";
+import { useInView } from "../../hooks/useInView";
 import { useLanguage } from "../../context/LanguageContext";
 
 const SocialLinks = () => {

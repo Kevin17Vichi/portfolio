@@ -1,5 +1,5 @@
 import "./skills.css";
-import { useInView } from "../../Hook/hook";
+import { useInView } from "../../hooks/useInView";
 import { useLanguage } from "../../context/LanguageContext";
 
 const Skills = () => {
