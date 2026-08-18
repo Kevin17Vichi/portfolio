@@ -3,19 +3,25 @@ import { useInView } from "../../hooks/useInView";
 import { useLanguage } from "../../context/LanguageContext";
 
 type Project = {
-  id: number; 
+  id: number;
   title: string;
-  category: string;
+  category: {
+    es: string;
+    en: string;
+  };
   image: string;
   github: string;
   technologies: string[];
 };
 
 const projects: Project[] = [
-    {
+  {
     id: 1,
     title: "Papa Sana",
-    category: "App movil de detección de enfermedades en papas",
+    category: {
+      es: "App móvil de detección de enfermedades en papas",
+      en: "Mobile app for potato disease detection",
+    },
     image: "/papaSana.webp",
     github: "https://github.com/Kevin17Vichi/PotatoDiseaseAI",
     technologies: ["Kotlin", "TF Lite", "Room"],
@@ -23,7 +29,10 @@ const projects: Project[] = [
   {
     id: 2,
     title: "Tuerca Dorada",
-    category: "Tienda Online con diseño intuitivo",
+    category: {
+      es: "Tienda online con diseño intuitivo",
+      en: "Online store with intuitive design",
+    },
     image: "/TuercaDorada.webp",
     github: "https://github.com/KevinVichi/TuercaDorada",
     technologies: ["Php", "HTML", "Bootstrap"],
@@ -31,7 +40,10 @@ const projects: Project[] = [
   {
     id: 3,
     title: "ITuti Shop",
-    category: "Tienda Online para la industria Ituti",
+    category: {
+      es: "Tienda online para la industria Ituti",
+      en: "Online store for the Ituti industry",
+    },
     image: "/ITutiShop.webp",
     github: "https://github.com/davidf110102/ITutiShop",
     technologies: ["Php", "HTML", "Bootstrap"],
@@ -39,7 +51,10 @@ const projects: Project[] = [
   {
     id: 4,
     title: "Sistema QR",
-    category: "Sistema de quejas y reclamos",
+    category: {
+      es: "Sistema de quejas y reclamos",
+      en: "Complaints and claims management system",
+    },
     image: "/SistemaQR.webp",
     github: "https://github.com/KevinVichi/SistemaQuejaReclamo",
     technologies: ["Angular", "Node", "Firebase"],
@@ -47,7 +62,10 @@ const projects: Project[] = [
   {
     id: 5,
     title: "KDinner",
-    category: "App de recetas de cocina",
+    category: {
+      es: "App de recetas de cocina",
+      en: "Cooking recipes mobile app",
+    },
     image: "/appReceta.webp",
     github: "https://github.com/KevinVichi/AppRecetas",
     technologies: ["Angular", "Node", "MySQL"],
@@ -55,7 +73,10 @@ const projects: Project[] = [
   {
     id: 6,
     title: "Portafolio",
-    category: "Portafolio profesional",
+    category: {
+      es: "Portafolio profesional",
+      en: "Professional portfolio",
+    },
     image: "/portafolio.webp",
     github: "https://github.com/Kevin17Vichi",
     technologies: ["React", "Node", "TypeScript"],
@@ -63,7 +84,10 @@ const projects: Project[] = [
   {
     id: 7,
     title: "VichiTec",
-    category: "Aplicacion de compra y venta",
+    category: {
+      es: "Aplicación de compra y venta",
+      en: "Buying and selling marketplace app",
+    },
     image: "/VichiTec.webp",
     github: "https://github.com/KevinVichi/VichiTec",
     technologies: ["Angular", "Firebase", "TypeScript"],
@@ -71,7 +95,10 @@ const projects: Project[] = [
   {
     id: 8,
     title: "RepoSeguro",
-    category: "Respositorio con cifrado de pdfs",
+    category: {
+      es: "Repositorio con cifrado de PDFs",
+      en: "Secure repository with PDF encryption",
+    },
     image: "/RepoSeguro.webp",
     github: "https://github.com/KevinVichi/repoSeguroFront",
     technologies: ["Next", "MySQL Server", "TypeScript"],
@@ -80,7 +107,7 @@ const projects: Project[] = [
 
 const Projects = () => {
   const { ref, isInView } = useInView();
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   return (
     <section
@@ -100,7 +127,7 @@ const Projects = () => {
               />
               <div className="textBox">
                 <p className="text head">{project.title}</p>
-                <p className="category">{project.category}</p>{" "}
+                <p className="category">{project.category[language]}</p>
                 <div className="tech-tags">
                   {project.technologies.map((tech) => (
                     <span key={tech} className="tech-tag">
@@ -114,8 +141,11 @@ const Projects = () => {
                   className="github-link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  // 8. Se añade 'aria-label' para mejorar la accesibilidad.
-                  aria-label={`Ver el código de ${project.title} en GitHub`}
+                  aria-label={
+                    language === "en"
+                      ? `View ${project.title} source code on GitHub`
+                      : `Ver el código de ${project.title} en GitHub`
+                  }
                 >
                   <img
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"

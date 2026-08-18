@@ -1,13 +1,25 @@
 import "./skills.css";
 import { useInView } from "../../hooks/useInView";
 import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../data/translations";
+
+type SkillCategoryKey = keyof typeof translations.es.skills.categories;
+
+interface SkillCategory {
+  categoryKey: SkillCategoryKey;
+  skills: {
+    name: string;
+    icon: string;
+  }[];
+}
 
 const Skills = () => {
   const { ref, isInView } = useInView();
   const { t } = useLanguage();
-  const skillCategories = [
+
+  const skillCategories: SkillCategory[] = [
     {
-      category: "Lenguajes",
+      categoryKey: "languages",
       skills: [
         {
           name: "Java",
@@ -32,7 +44,7 @@ const Skills = () => {
       ],
     },
     {
-      category: "Frontend",
+      categoryKey: "frontend",
       skills: [
         {
           name: "HTML5",
@@ -61,7 +73,7 @@ const Skills = () => {
       ],
     },
     {
-      category: "Backend",
+      categoryKey: "backend",
       skills: [
         {
           name: "Node.js",
@@ -74,7 +86,7 @@ const Skills = () => {
       ],
     },
     {
-      category: "Bases de Datos",
+      categoryKey: "databases",
       skills: [
         {
           name: "MySQL",
@@ -91,11 +103,11 @@ const Skills = () => {
         {
           name: "MariaDB",
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mariadb/mariadb-original.svg",
-        }
+        },
       ],
     },
     {
-      category: "Desarrollo Móvil",
+      categoryKey: "mobile",
       skills: [
         {
           name: "Kotlin",
@@ -108,7 +120,7 @@ const Skills = () => {
       ],
     },
     {
-      category: "Machine Learning",
+      categoryKey: "ml",
       skills: [
         {
           name: "TensorFlow",
@@ -121,7 +133,7 @@ const Skills = () => {
       ],
     },
     {
-      category: "Diseño UI/UX",
+      categoryKey: "design",
       skills: [
         {
           name: "Figma",
@@ -134,7 +146,7 @@ const Skills = () => {
       ],
     },
     {
-      category: "Herramientas",
+      categoryKey: "tools",
       skills: [
         {
           name: "Jira",
@@ -166,7 +178,9 @@ const Skills = () => {
         <h2 className="section-title">{t.skills.title}</h2>
         {skillCategories.map((category, categoryIndex) => (
           <div key={categoryIndex} className="category-group">
-            <h3 className="category-title">{category.category}</h3>
+            <h3 className="category-title">
+              {t.skills.categories[category.categoryKey]}
+            </h3>
             <div className="skills-grid">
               {category.skills.map((skill, skillIndex) => (
                 <div className="skill-item" key={skillIndex}>

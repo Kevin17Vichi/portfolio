@@ -6,7 +6,10 @@ type EducationItem = {
   id: number;
   name: string;
   image: string;
-  description: string;
+  description: {
+    es: string;
+    en: string;
+  };
   url?: string;
   type: "academica" | "capacitacion";
   pending?: boolean;
@@ -17,7 +20,10 @@ const educations: EducationItem[] = [
     id: 100,
     name: "U. E. Juan Abel Echeverría",
     image: "/jae.webp",
-    description: "Bachiller Técnico Industrial — Instalaciones, Equipos y Máquinas Eléctricas",
+    description: {
+      es: "Bachiller Técnico Industrial — Instalaciones, Equipos y Máquinas Eléctricas",
+      en: "Industrial Technical High School — Electrical Installations, Equipment and Machines",
+    },
     url: "/bachiller.pdf",
     type: "academica",
   },
@@ -25,7 +31,10 @@ const educations: EducationItem[] = [
     id: 101,
     name: "Universidad Técnica de Ambato",
     image: "/uta.webp",
-    description: "Ingeniero en Software",
+    description: {
+      es: "Ingeniero en Software",
+      en: "Software Engineer",
+    },
     type: "academica",
     url: "/ingeniero.pdf",
   },
@@ -33,7 +42,10 @@ const educations: EducationItem[] = [
     id: 1,
     name: "Google Activate",
     image: "/google.webp",
-    description: "Competencias digitales para profesionales",
+    description: {
+      es: "Competencias digitales para profesionales",
+      en: "Digital skills for professionals",
+    },
     url: "https://skillshop.exceedlms.com/student/award/WYCNNjn3HaJain3uSs8wE81f",
     type: "capacitacion",
   },
@@ -41,41 +53,54 @@ const educations: EducationItem[] = [
     id: 4,
     name: "Google Activate",
     image: "/google.webp",
-    description: "Curso de Desarrollo de Apps Móviles",
+    description: {
+      es: "Curso de Desarrollo de Apps Móviles",
+      en: "Mobile App Development Course",
+    },
     url: "https://skillshop.exceedlms.com/student/award/4gsPiRQs1dxTwVcWiW7qKjXA",
     type: "capacitacion",
   },
   {
     id: 5,
-    name: "Curso SUDEN",
+    name: "SUDEN",
     image: "/suden.webp",
-    description: "ESPECIALIDAD TÉCNICA",
+    description: {
+      es: "ESPECIALIDAD TÉCNICA",
+      en: "TECHNICAL SPECIALTY",
+    },
     url: "/tecnica.pdf",
     type: "capacitacion",
   },
   {
     id: 6,
-    name: "Curso SUDEN",
+    name: "SUDEN",
     image: "/suden.webp",
-    description:
-      "EXPERTO (A) EN ENSAMBLAJE DE COMPUTADORAS, CELULARES E IMPRESORAS",
+    description: {
+      es: "EXPERTO (A) EN ENSAMBLAJE DE COMPUTADORAS, CELULARES E IMPRESORAS",
+      en: "EXPERT IN COMPUTER, MOBILE PHONE, AND PRINTER ASSEMBLY",
+    },
     url: "/ensamblaje.pdf",
     type: "capacitacion",
   },
   {
     id: 7,
-    name: "Curso SUDEN",
+    name: "SUDEN",
     image: "/suden.webp",
-    description:
-      "EXPERTO (A) EN REPARACIÓN DE COMPUTADORAS, CELULARES E IMPRESORAS",
+    description: {
+      es: "EXPERTO (A) EN REPARACIÓN DE COMPUTADORAS, CELULARES E IMPRESORAS",
+      en: "EXPERT IN COMPUTER, MOBILE PHONE, AND PRINTER REPAIR",
+    },
     url: "/reparacion.pdf",
     type: "capacitacion",
   },
   {
     id: 8,
-    name: "Curso SUDEN",
+    name: "SUDEN",
     image: "/suden.webp",
-    description: "EXPERTO (A) TÉCNICO INTERNACIONAL",
+    description: {
+      es: "EXPERTO (A) TÉCNICO INTERNACIONAL",
+      en: "INTERNATIONAL TECHNICAL EXPERT",
+    },
     url: "/internacional.pdf",
     type: "capacitacion",
   },
@@ -83,7 +108,10 @@ const educations: EducationItem[] = [
     id: 9,
     name: "Fundación Carlos Slim",
     image: "/CS.webp",
-    description: "Fundamentos de Machine Learning",
+    description: {
+      es: "Fundamentos de Machine Learning",
+      en: "Fundamentals of Machine Learning",
+    },
     url: "https://capacitateparaelempleo.org/verifica/9094cb1a-0003-4fdf-b0a0-932f591c6a4c/e85dc447-ab36-4aa2-8bee-f8b82eed9c12",
     type: "capacitacion",
   },
@@ -94,7 +122,7 @@ const capacitaciones = educations.filter((e) => e.type === "capacitacion");
 
 const Education = () => {
   const { ref, isInView } = useInView();
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   const renderCard = (edu: EducationItem) => (
     <div key={edu.id} className="education-card">
@@ -107,7 +135,7 @@ const Education = () => {
       />
       <div className="education-textBox">
         <h3 className="education-name">{edu.name}</h3>
-        <p className="education-description">{edu.description}</p>
+        <p className="education-description">{edu.description[language]}</p>
         {edu.pending && <span className="education-pending-tag">{t.education.pending}</span>}
         {edu.url && (
           <a
@@ -115,7 +143,11 @@ const Education = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="education-link"
-            aria-label={`Ver certificado de ${edu.name}`}
+            aria-label={
+              language === "en"
+                ? `View certificate for ${edu.name}`
+                : `Ver certificado de ${edu.name}`
+            }
           >
             📄
           </a>
