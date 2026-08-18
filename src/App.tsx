@@ -1,6 +1,6 @@
 import "./App.css";
 import StarsBackground from "./components/Star/StarsBackground";
-import FloatingControls from "./components/Controls/FloatingControls";
+import FloatingControls from "./components/Buttons/FloatingControls";
 import Menu from "./components/Menu/menu";
 import Name from "./components/Name/name";
 import Profile from "./components/Profile/profile";

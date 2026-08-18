@@ -1,16 +1,18 @@
-import "./PowerButton.css";
+import "./Button.css";
 
-interface PowerButtonProps {
+interface MusicButtonProps {
   isPlaying: boolean;
+  onToggle: () => void;
 }
 
-const PowerButton = ({ isPlaying }: PowerButtonProps) => {
+const MusicButton = ({ isPlaying, onToggle }: MusicButtonProps) => {
   return (
     <button
       type="button"
-      className="music-icon-btn"
+      className="floating-button music-icon-btn"
       aria-label={isPlaying ? "Pausar música" : "Reproducir música"}
       aria-pressed={isPlaying}
+      onClick={onToggle}
     >
       {isPlaying ? (
         <svg
@@ -54,4 +56,4 @@ const PowerButton = ({ isPlaying }: PowerButtonProps) => {
   );
 };
 
-export default PowerButton;
+export default MusicButton;

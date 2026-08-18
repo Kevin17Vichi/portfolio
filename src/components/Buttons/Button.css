@@ -1,0 +1,60 @@
+/* Contenedor flotante superior derecho */
+.music-controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Estilo base para todos los botones flotantes */
+.floating-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(46, 46, 46, 0.95);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.1);
+  font-family: inherit;
+}
+
+.floating-button:hover {
+  transform: translateY(-2px);
+  background-color: rgba(174, 0, 255, 0.8);
+  box-shadow: 0 4px 20px rgba(174, 0, 255, 0.4);
+}
+
+.floating-button:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 2px;
+}
+
+/* Modificador: Botón de cambio de idioma */
+.language-toggle {
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* Modificador: Botón circular de música */
+.music-icon-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+/* Modificador: Botón de CV */
+.cv-button {
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
