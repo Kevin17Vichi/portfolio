@@ -3,16 +3,27 @@ import "./Button.css";
 interface MusicButtonProps {
   isPlaying: boolean;
   onToggle: () => void;
+  language: "en" | "es";
 }
 
-const MusicButton = ({ isPlaying, onToggle }: MusicButtonProps) => {
+const MusicButton = ({ isPlaying, onToggle, language }: MusicButtonProps) => {
+  const label =
+    language === "es"
+      ? isPlaying
+        ? "Pausar música"
+        : "Reproducir música"
+      : isPlaying
+      ? "Pause music"
+      : "Play music";
+
   return (
     <button
       type="button"
       className="floating-button music-icon-btn"
-      aria-label={isPlaying ? "Pausar música" : "Reproducir música"}
+      aria-label={label}
       aria-pressed={isPlaying}
       onClick={onToggle}
+      title={label}
     >
       {isPlaying ? (
         <svg

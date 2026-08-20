@@ -1,4 +1,5 @@
 import "./Button.css";
+import CvButton from "./CvButton";
 import LanguageButton from "./LanguageButton";
 import MusicButton from "./MusicButton";
 import { useAudioPlayer } from "../../hooks/useAudioPlayer";
@@ -10,8 +11,9 @@ const FloatingControls = () => {
 
   return (
     <nav className="music-controls" aria-label="Controles flotantes">
+      <CvButton language={language} />
       <LanguageButton language={language} onToggle={toggleLanguage} />
-      <MusicButton isPlaying={isPlaying} onToggle={togglePlayPause} />
+      <MusicButton language={language} isPlaying={isPlaying} onToggle={togglePlayPause} />
     </nav>
   );
 };

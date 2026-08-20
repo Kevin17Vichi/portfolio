@@ -6,12 +6,15 @@ interface LanguageButtonProps {
 }
 
 const LanguageButton = ({ language, onToggle }: LanguageButtonProps) => {
+  const label = language === "es" ? "Cambiar a inglés" : "Switch to Spanish";
+
   return (
     <button
       type="button"
       className="floating-button language-toggle"
       onClick={onToggle}
-      aria-label="Cambiar idioma"
+      aria-label={label}
+      title={label}
     >
       {language === "en" ? "EN" : "ES"}
     </button>
