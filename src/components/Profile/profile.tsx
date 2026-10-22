@@ -14,7 +14,14 @@ const Profile = () => {
     >
       <div className="profile-content">
         <div className="profile-image">
-          <img src="/foto4.webp" alt="Foto de perfil" width={500} height={400} />
+          <img
+            src="/foto4.webp"
+            alt="Foto de perfil"
+            loading="lazy"
+            decoding="async"
+            width={500}
+            height={400}
+          />
         </div>
         <div className="profile-text glass-card">
           <h2 className="section-title">{t.profile.title}</h2>

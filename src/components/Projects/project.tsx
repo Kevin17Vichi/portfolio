@@ -124,6 +124,8 @@ const Projects = () => {
                 className="project-img"
                 src={project.image}
                 alt={project.title}
+                loading="lazy"
+                decoding="async"
               />
               <div className="textBox">
                 <p className="text head">{project.title}</p>
@@ -150,6 +152,10 @@ const Projects = () => {
                   <img
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
                     alt="GitHub"
+                    loading="lazy"
+                    decoding="async"
+                    width={28}
+                    height={28}
                   />
                 </a>
               </div>

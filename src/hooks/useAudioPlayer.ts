@@ -7,6 +7,7 @@ export const useAudioPlayer = (src = "/lovely2.mp3") => {
   useEffect(() => {
     try {
       const audio = new Audio(src);
+      audio.preload = "none";
       audio.onended = () => {
         audio.currentTime = 0;
         audio.play();
@@ -20,8 +21,9 @@ export const useAudioPlayer = (src = "/lovely2.mp3") => {
     }
 
     return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
+      const currentAudio = audioRef.current;
+      if (currentAudio) {
+        currentAudio.pause();
         audioRef.current = null;
         console.log("🔄 Audio limpiado en cleanup");
       }

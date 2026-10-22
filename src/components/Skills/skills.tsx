@@ -13,164 +13,164 @@ interface SkillCategory {
   }[];
 }
 
+const skillCategories: SkillCategory[] = [
+  {
+    categoryKey: "languages",
+    skills: [
+      {
+        name: "Java",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+      },
+      {
+        name: "JavaScript",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      },
+      {
+        name: "TypeScript",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      },
+      {
+        name: "Python",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      },
+      {
+        name: "PHP",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+      },
+    ],
+  },
+  {
+    categoryKey: "frontend",
+    skills: [
+      {
+        name: "HTML5",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+      },
+      {
+        name: "CSS3",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+      },
+      {
+        name: "React",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      },
+      {
+        name: "Next.js",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+      },
+      {
+        name: "Vue.js",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
+      },
+      {
+        name: "Angular",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
+      },
+    ],
+  },
+  {
+    categoryKey: "backend",
+    skills: [
+      {
+        name: "Node.js",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      },
+      {
+        name: "Express.js",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+      },
+    ],
+  },
+  {
+    categoryKey: "databases",
+    skills: [
+      {
+        name: "MySQL",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+      },
+      {
+        name: "SQL Server",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg",
+      },
+      {
+        name: "Firebase",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+      },
+      {
+        name: "MariaDB",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mariadb/mariadb-original.svg",
+      },
+      {
+        name: "MongoDB",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-plain.svg",
+      },
+    ],
+  },
+  {
+    categoryKey: "mobile",
+    skills: [
+      {
+        name: "Kotlin",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg",
+      },
+      {
+        name: "Ionic",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original.svg",
+      },
+    ],
+  },
+  {
+    categoryKey: "ml",
+    skills: [
+      {
+        name: "TensorFlow",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
+      },
+      {
+        name: "Keras",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg",
+      },
+    ],
+  },
+  {
+    categoryKey: "design",
+    skills: [
+      {
+        name: "Figma",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+      },
+      {
+        name: "Adobe XD",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg",
+      },
+    ],
+  },
+  {
+    categoryKey: "tools",
+    skills: [
+      {
+        name: "Jira",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg",
+      },
+      {
+        name: "Postman",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
+      },
+      {
+        name: "GitHub",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+      },
+      {
+        name: "Docker",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+      },
+    ],
+  },
+];
+
 const Skills = () => {
   const { ref, isInView } = useInView();
   const { t } = useLanguage();
-
-  const skillCategories: SkillCategory[] = [
-    {
-      categoryKey: "languages",
-      skills: [
-        {
-          name: "Java",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-        },
-        {
-          name: "JavaScript",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-        },
-        {
-          name: "TypeScript",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-        },
-        {
-          name: "Python",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-        },
-        {
-          name: "PHP",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
-        },
-      ],
-    },
-    {
-      categoryKey: "frontend",
-      skills: [
-        {
-          name: "HTML5",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-        },
-        {
-          name: "CSS3",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-        },
-        {
-          name: "React",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-        },
-        {
-          name: "Next.js",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-        },
-        {
-          name: "Vue.js",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
-        },
-        {
-          name: "Angular",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
-        },
-      ],
-    },
-    {
-      categoryKey: "backend",
-      skills: [
-        {
-          name: "Node.js",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-        },
-        {
-          name: "Express.js",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-        },
-      ],
-    },
-    {
-      categoryKey: "databases",
-      skills: [
-        {
-          name: "MySQL",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-        },
-        {
-          name: "SQL Server",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg",
-        },
-        {
-          name: "Firebase",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
-        },
-        {
-          name: "MariaDB",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mariadb/mariadb-original.svg",
-        },
-        {
-          name: "MongoDB",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-plain.svg",
-        },
-      ],
-    },
-    {
-      categoryKey: "mobile",
-      skills: [
-        {
-          name: "Kotlin",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg",
-        },
-        {
-          name: "Ionic",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original.svg",
-        },
-      ],
-    },
-    {
-      categoryKey: "ml",
-      skills: [
-        {
-          name: "TensorFlow",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
-        },
-        {
-          name: "Keras",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg",
-        },
-      ],
-    },
-    {
-      categoryKey: "design",
-      skills: [
-        {
-          name: "Figma",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
-        },
-        {
-          name: "Adobe XD",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg",
-        },
-      ],
-    },
-    {
-      categoryKey: "tools",
-      skills: [
-        {
-          name: "Jira",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg",
-        },
-        {
-          name: "Postman",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
-        },
-        {
-          name: "GitHub",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-        },
-        {
-          name: "Docker",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-        },
-      ],
-    },
-  ];
 
   return (
     <section
@@ -180,18 +180,22 @@ const Skills = () => {
     >
       <div className="skills-container glass-card">
         <h2 className="section-title">{t.skills.title}</h2>
-        {skillCategories.map((category, categoryIndex) => (
-          <div key={categoryIndex} className="category-group">
+        {skillCategories.map((category) => (
+          <div key={category.categoryKey} className="category-group">
             <h3 className="category-title">
               {t.skills.categories[category.categoryKey]}
             </h3>
             <div className="skills-grid">
-              {category.skills.map((skill, skillIndex) => (
-                <div className="skill-item" key={skillIndex}>
+              {category.skills.map((skill) => (
+                <div className="skill-item" key={skill.name}>
                   <img
                     src={skill.icon}
                     alt={skill.name}
                     className="skill-icon"
+                    loading="lazy"
+                    decoding="async"
+                    width={48}
+                    height={48}
                   />
                   <span className="skill-name">{skill.name}</span>
                 </div>

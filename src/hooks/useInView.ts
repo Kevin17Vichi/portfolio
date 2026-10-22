@@ -3,8 +3,10 @@ import { useState, useEffect, useRef } from "react";
 export const useInView = () => {
   const [isInView, setIsInView] = useState(false);
   const ref = useRef<HTMLElement>(null);
-
   useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsInView(entry.isIntersecting);
@@ -14,14 +16,10 @@ export const useInView = () => {
       }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(element);
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
+      observer.unobserve(element);
     };
   }, []);
 

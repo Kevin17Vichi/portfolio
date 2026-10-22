@@ -14,45 +14,45 @@ interface HobbyItem {
   };
 }
 
+const hobbies: HobbyItem[] = [
+  {
+    name: {
+      es: "Videojuegos 🎮",
+      en: "Video Games 🎮",
+    },
+    image: "/juegoCooperativo.webp",
+    description: {
+      es: "Me apasionan los juegos cooperativos",
+      en: "I am passionate about cooperative games",
+    },
+  },
+  {
+    name: {
+      es: "Música 🎵",
+      en: "Music 🎵",
+    },
+    image: "/piano2.webp",
+    description: {
+      es: "Me fascina escuchar composiciones de piano y violín",
+      en: "I love listening to piano and violin compositions",
+    },
+  },
+  {
+    name: {
+      es: "Deportes 🚲",
+      en: "Sports 🚲",
+    },
+    image: "/ciclismo.webp",
+    description: {
+      es: "Disfruto del ciclismo",
+      en: "I enjoy cycling",
+    },
+  },
+];
+
 const Hobbies = () => {
   const { ref, isInView } = useInView();
   const { language, t } = useLanguage();
-
-  const hobbies: HobbyItem[] = [
-    {
-      name: {
-        es: "Videojuegos 🎮",
-        en: "Video Games 🎮",
-      },
-      image: "/juegoCooperativo.webp",
-      description: {
-        es: "Me apasionan los juegos cooperativos",
-        en: "I am passionate about cooperative games",
-      },
-    },
-    {
-      name: {
-        es: "Música 🎵",
-        en: "Music 🎵",
-      },
-      image: "/piano2.webp",
-      description: {
-        es: "Me fascina escuchar composiciones de piano y violín",
-        en: "I love listening to piano and violin compositions",
-      },
-    },
-    {
-      name: {
-        es: "Deportes 🚲",
-        en: "Sports 🚲",
-      },
-      image: "/ciclismo.webp",
-      description: {
-        es: "Disfruto del ciclismo",
-        en: "I enjoy cycling",
-      },
-    },
-  ];
 
   return (
     <section
@@ -63,12 +63,14 @@ const Hobbies = () => {
       <div className="hobbies-container glass-card">
         <h2 className="section-title">{t.hobbies.title}</h2>
         <div className="hobbies-grid">
-          {hobbies.map((hobby, index) => (
-            <div key={index} className="hobby-card">
+          {hobbies.map((hobby) => (
+            <div key={hobby.name.en} className="hobby-card">
               <img
                 src={hobby.image}
                 alt={hobby.name[language]}
                 className="hobby-image"
+                loading="lazy"
+                decoding="async"
                 width={300}
                 height={200}
               />

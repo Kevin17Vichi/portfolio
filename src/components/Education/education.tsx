@@ -130,6 +130,8 @@ const Education = () => {
         src={edu.image}
         alt={edu.name}
         className="education-image"
+        loading="lazy"
+        decoding="async"
         width={300}
         height={200}
       />

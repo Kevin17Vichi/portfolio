@@ -1,22 +1,33 @@
+import { memo, useMemo } from "react";
 import "./StarsBackground.css";
 
-const StarsBackground = () => {
+const StarsBackground = memo(() => {
+  const stars = useMemo(
+    () =>
+      Array.from({ length: 20 }, (_, i) => ({
+        id: i,
+        topOffset: `${Math.random() * 100}vh`,
+        fallDelay: `-${Math.random() * 30}s`,
+      })),
+    []
+  );
+
   return (
     <div className="stars">
-      {[...Array(50)].map((_, i) => (
+      {stars.map((star) => (
         <div
-          key={i}
+          key={star.id}
           className="star"
           style={
             {
-              "--top-offset": `${Math.random() * 100}vh`,
-              "--fall-delay": `-${Math.random() * 30}s`,
+              "--top-offset": star.topOffset,
+              "--fall-delay": star.fallDelay,
             } as React.CSSProperties
           }
         />
       ))}
     </div>
   );
-};
+});
 
 export default StarsBackground;
