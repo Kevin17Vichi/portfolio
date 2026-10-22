@@ -11,15 +11,15 @@
   transform: skewY(-15deg);
   margin: 0;
   padding: 0;
-  width: 50px;
+  width: max-content;
 }
 
 .menu-item {
   position: relative;
   list-style: none;
-  width: 100px;
+  min-width: 100px;
   background-color: rgb(46, 46, 46);
-  padding: 8px;
+  padding: 8px 12px;
   transition: background-color 0.5s, transform 0.5s;
   z-index: var(--i);
 }
@@ -75,6 +75,7 @@
   font-size: 0.8em;
   cursor: pointer;
   transition: color var(--transition-base);
+  white-space: nowrap;
 }
 
 .menu-link:active {
