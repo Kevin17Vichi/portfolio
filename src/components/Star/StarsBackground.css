@@ -22,7 +22,8 @@
   height: var(--star-tail-height);
   background: linear-gradient(45deg, white, transparent);
   border-radius: 50%;
-  filter: drop-shadow(0 0 6px white);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+  will-change: transform, opacity;
   transform: translate3d(104em, 0, 0);
   animation: fall var(--fall-duration) var(--fall-delay) linear infinite,
     tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;

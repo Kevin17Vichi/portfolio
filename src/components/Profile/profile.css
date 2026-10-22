@@ -39,7 +39,7 @@
   align-items: center;
   width: 100%;
   border-radius: var(--border-radius-item);
-  backdrop-filter: blur(10px);
+  /*backdrop-filter: blur(10px);*/
   transition: transform var(--transition-base);
 }
 

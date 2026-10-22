@@ -4,7 +4,7 @@ import "./StarsBackground.css";
 const StarsBackground = memo(() => {
   const stars = useMemo(
     () =>
-      Array.from({ length: 20 }, (_, i) => ({
+      Array.from({ length: 10 }, (_, i) => ({
         id: i,
         topOffset: `${Math.random() * 100}vh`,
         fallDelay: `-${Math.random() * 30}s`,
