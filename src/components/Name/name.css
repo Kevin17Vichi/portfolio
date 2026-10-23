@@ -13,58 +13,70 @@
   flex-direction: column;
 }
 
- @media (max-width: 768px) {
+@media (max-width: 768px) {
   .content {
     height: 100dvh;
   }
 }
 
 .profession {
-  /* font-family heredada de body vía index.css */
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   color: #ffffff;
   text-align: center;
   margin-top: 0;
   opacity: 0;
   animation: fadeIn 1s ease-in forwards; /* @keyframes definido en index.css */
-  animation-delay: 3s;
+  animation-delay: 1.8s; /* justo al terminar de escribir el nombre */
   line-height: 1.5;
 }
 
 .name {
-  /* font-weight: 800 reemplaza la familia inexistente "Poppins-extrabold" */
   font-weight: 800;
-  font-size: clamp(5rem, 8vw, 5rem);
+  font-size: 5rem; /* equivale a tu clamp(5rem, 8vw, 5rem) */
   color: #ffffff;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   letter-spacing: 0.1em;
   padding: 0 20px;
   text-align: center;
-  border-right: 4px solid #ffffff;
   white-space: nowrap;
-  overflow: hidden;
-  animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
-  width: fit-content;
   max-width: 90vw;
+  position: relative;
 }
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 60%;
-  }
+.name-text {
+  display: inline-block;
+  /* Cambia N por el número de caracteres de tu texto, contando espacios */
+  animation: reveal 1.8s steps(15, end);
+}
+
+/* Cursor: aparece al terminar de escribir y parpadea */
+.name::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 20px; /* igual al padding lateral de .name */
+  width: 4px;
+  height: 0.9em;
+  transform: translateY(-50%);
+  background: var(--accent-color);
+  animation:
+    caret-move 1.8s steps(15, end) forwards,
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes reveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
 }
 
 @keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: var(--accent-color);
-  }
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes caret-move {
+  from { left: 20px; }
+  to   { left: calc(100% - 20px); }
 }
 
 /* ============================================================
@@ -96,5 +108,24 @@
 
   .profession {
     font-size: clamp(0.8rem, 2vw, 1.2rem);
+  }
+}
+
+/* Movimiento reducido: sin esperas, todo visible de inmediato */
+@media (prefers-reduced-motion: reduce) {
+  .profession {
+    animation-delay: 0s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profession {
+    animation-delay: 0s;
+  }
+
+  .name::after {
+    animation: none;
+    left: calc(100% - 20px);
+    opacity: 1;
   }
 }
