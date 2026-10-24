@@ -2,6 +2,7 @@ import "./skills.css";
 import { useInView } from "../../hooks/useInView";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../data/translations";
+import icons from "../../assets/icons.ts";
 
 type SkillCategoryKey = keyof typeof translations.es.skills.categories;
 
@@ -19,23 +20,23 @@ const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "Java",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+        icon: icons.java,
       },
       {
         name: "JavaScript",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+        icon: icons.javascript,
       },
       {
         name: "TypeScript",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+        icon: icons.typescript,
       },
       {
         name: "Python",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+        icon: icons.python,
       },
       {
         name: "PHP",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+        icon: icons.php,
       },
     ],
   },
@@ -44,27 +45,27 @@ const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "HTML5",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+        icon: icons.html5,
       },
       {
         name: "CSS3",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+        icon: icons.css3,
       },
       {
         name: "React",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+        icon: icons.react,
       },
       {
         name: "Next.js",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+        icon: icons.nextjs,
       },
       {
         name: "Vue.js",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
+        icon: icons.vuejs,
       },
       {
         name: "Angular",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
+        icon: icons.angular,
       },
     ],
   },
@@ -73,11 +74,11 @@ const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "Node.js",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+        icon: icons.nodejs,
       },
       {
         name: "Express.js",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+        icon: icons.express,
       },
     ],
   },
@@ -86,23 +87,23 @@ const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "MySQL",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+        icon: icons.mysql,
       },
       {
         name: "SQL Server",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg",
+        icon: icons.sqlserver,
       },
       {
         name: "Firebase",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+        icon: icons.firebase,
       },
       {
         name: "MariaDB",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mariadb/mariadb-original.svg",
+        icon: icons.mariadb,
       },
       {
         name: "MongoDB",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-plain.svg",
+        icon: icons.mongodb,
       },
     ],
   },
@@ -111,11 +112,11 @@ const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "Kotlin",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg",
+        icon: icons.kotlin,
       },
       {
         name: "Ionic",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original.svg",
+        icon: icons.ionic,
       },
     ],
   },
@@ -124,11 +125,11 @@ const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "TensorFlow",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
+        icon: icons.tensorflow,
       },
       {
         name: "Keras",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg",
+        icon: icons.keras,
       },
     ],
   },
@@ -137,11 +138,11 @@ const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "Figma",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+        icon: icons.figma,
       },
       {
         name: "Adobe XD",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg",
+        icon: icons.adobexd,
       },
     ],
   },
@@ -150,19 +151,19 @@ const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "Jira",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg",
+        icon: icons.jira,
       },
       {
         name: "Postman",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
+        icon: icons.postman,
       },
       {
         name: "GitHub",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+        icon: icons.github,
       },
       {
         name: "Docker",
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+        icon: icons.docker,
       },
     ],
   },
