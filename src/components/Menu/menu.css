@@ -3,8 +3,11 @@
 .menu-container {
   position: absolute;
   left: 70px;
-  top: 80px;
+  top: 40px;
+
   z-index: 100;
+  transform: scale(0.9);
+  transform-origin: top left;
 }
 
 .menu-list {
@@ -17,11 +20,13 @@
 .menu-item {
   position: relative;
   list-style: none;
-  min-width: 100px;
+  min-width: 100px; /* Ajusta este valor según necesites */
+ /* width: 100px;     */
   background-color: rgb(46, 46, 46);
   padding: 8px 12px;
   transition: background-color 0.5s, transform 0.5s;
   z-index: var(--i);
+  /*box-sizing: border-box; */
 }
 
 .menu-item:hover {
@@ -76,6 +81,10 @@
   cursor: pointer;
   transition: color var(--transition-base);
   white-space: nowrap;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .menu-link:active {
@@ -90,16 +99,17 @@
 @media screen and (max-width: 768px) {
   .menu-container {
     left: 45px;
-    top: 80px;
+    top: 45px;
     transform: scale(0.85);
     transform-origin: top left;
+
   }
 }
 
 @media screen and (max-width: 480px) {
   .menu-container {
     left: 35px;
-    top: 70px;
+    top: 35px;
     transform: scale(0.75);
     transform-origin: top left;
   }
